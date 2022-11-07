@@ -219,11 +219,14 @@ class EyeD3
         if (array_key_exists("lyrics", $meta) && $meta["lyrics"] != "") {
             array_push($args, '-L', '::'.'"'.$meta["lyrics"].'"');
         }
-        if (array_key_exists("year", $meta) && $meta["year"] != "") {
-            array_push($args, '-Y', $meta["year"]);
-        }
         if (array_key_exists("album_art", $meta) && $meta["album_art"] != ""){
             array_push($args,"--add-image",$meta["album_art"].":FRONT_COVER");
+        }
+        if (array_key_exists("year", $meta) && $meta["year"] != "") {
+            array_push($args, '--recording-date', $meta["year"]);
+        }
+        if (array_key_exists("genre", $meta) && $meta["genre"] != ""){
+            array_push($args, '-G', '"'.$meta["genre"].'"');
         }
         return $args;
     }

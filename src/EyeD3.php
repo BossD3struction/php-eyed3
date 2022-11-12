@@ -204,13 +204,13 @@ class EyeD3
     public static function buildArgs($meta)
     {
         $args = [];
-        if (array_key_exists("artist", $meta) && $meta["artist"] != "") {
+        if (array_key_exists("artist", $meta)) {
             array_push($args, '-a', '"'.$meta["artist"].'"');
         }
-        if (array_key_exists("title", $meta) && $meta["title"] != "") {
+        if (array_key_exists("title", $meta)) {
             array_push($args, '-t', '"'.$meta["title"].'"');
         }
-        if (array_key_exists("album", $meta) && $meta["album"] != "") {
+        if (array_key_exists("album", $meta)) {
             array_push($args, '-A', '"'.$meta["album"].'"');
         }
         if (array_key_exists("comment", $meta) && $meta["comment"] != "") {
